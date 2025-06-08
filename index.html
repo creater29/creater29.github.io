@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arman Bishnoi - Resume Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      backdrop-filter: blur(5px);
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    }
+    h1, h2 {
+      color: #00ffcc;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .contact, .skills, .certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      background-color: #00ffcc33;
+      border: 1px solid #00ffcc;
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-size: 0.9em;
+    }
+    .resume-pdf {
+      text-align: center;
+      margin-top: 40px;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Arman Bishnoi</h1>
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <span class="tag">📞 +91 7357416347</span>
+        <span class="tag">📧 <a href="mailto:armanbishnoi.official@gmail.com">armanbishnoi.official@gmail.com</a></span>
+        <span class="tag">💼 <a href="https://linkedin.com/in/arman-bishnoi">LinkedIn</a></span>
+        <span class="tag">🌐 <a href="https://creater29.github.io/">Portfolio Site</a></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p>Thapar Institute of Engineering And Technology (2021 - 2025)<br>B.E. in Computer Science (AI)</p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>E-Commerce Product Intelligence System</strong> – <a href="https://github.com/creater29/smart_product_listing/tree/main">GitHub</a><br>
+          Developed ML pipeline for product analysis with 85% accuracy; used ResNet50 for CV tasks.
+        </li>
+        <li>
+          <strong>Customer Churn Prediction</strong> – <a href="https://github.com/creater29/Customer-Churn-Prediction">GitHub</a><br>
+          Classification model on telecom data; 78% accuracy, SHAP analysis, GridSearchCV used.
+        </li>
+        <li>
+          <strong>Interactive Sales Dashboard</strong> – <a href="https://github.com/creater29/Interactive-Sales-Dashboard-for-Retail-Analytics-/tree/main">GitHub</a><br>
+          Power BI dashboard with SQL backend; real-time retail insights.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <p><strong>ThapaSat (ELC) – Summer Intern</strong> (June 2023 - July 2023)<br>
+      Processed satellite data to predict cyclones using Python-based signal processing and CV.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="tag">Python</span>
+        <span class="tag">C++</span>
+        <span class="tag">SQL</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">AWS</span>
+        <span class="tag">MongoDB</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="certs">
+        <span class="tag"><a href="https://credly.com/badges/f1c2b108-5749-497a">AWS Cloud Foundations</a></span>
+        <span class="tag">BigQuery ML</span>
+        <span class="tag">Vertex AI Prompt Design</span>
+      </div>
+    </section>
+
+    <section class="resume-pdf">
+      <h2>Resume PDF</h2>
+      <iframe src="ArmanBishnoiResume.pdf"></iframe>
+    </section>
+  </div>
+</body>
+</html>
