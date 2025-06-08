@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arman Bishnoi - Resume Portfolio</title>
+    <title>Arman Bishnoi - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -50,14 +50,55 @@
             z-index: 2;
         }
 
+        .profile-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 25px;
+            cursor: pointer;
+        }
+
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             border: 5px solid rgba(14, 165, 233, 0.3);
-            margin: 0 auto 25px;
             background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80') center/cover;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-container:hover .profile-img {
+            transform: scale(1.05);
+            border-color: rgba(14, 165, 233, 0.6);
+        }
+
+        .edit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-container:hover .edit-overlay {
+            opacity: 1;
+        }
+
+        .edit-overlay i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        #profile-upload {
+            display: none;
         }
 
         h1 {
@@ -77,8 +118,10 @@
         .contact-info {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 30px;
             margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         .contact-item {
@@ -86,6 +129,56 @@
             align-items: center;
             gap: 10px;
             font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(30, 41, 59, 0.8);
+            color: #38bdf8;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .social-link:hover {
+            background: #38bdf8;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(to right, #0ea5e9, #38bdf8);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.5);
+            background: linear-gradient(to right, #0d94d4, #2ca9e1);
         }
 
         /* Section styling */
@@ -321,60 +414,6 @@
             color: #e2e8f0;
         }
 
-        /* Certifications */
-        .certs-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .cert-card {
-            background: rgba(30, 41, 59, 0.6);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .cert-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #f8fafc;
-        }
-
-        .cert-issuer {
-            color: #94a3b8;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .cert-date {
-            color: #64748b;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .cert-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .cert-link:hover {
-            color: #7dd3fc;
-        }
-
         /* Footer */
         footer {
             text-align: center;
@@ -382,6 +421,44 @@
             color: #94a3b8;
             border-top: 1px solid rgba(148, 163, 184, 0.1);
             margin-top: 40px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(30, 41, 59, 0.8);
+            color: #38bdf8;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .footer-link:hover {
+            background: #38bdf8;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-footer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 1.1rem;
         }
 
         /* Responsive design */
@@ -403,8 +480,13 @@
                 font-size: 2rem;
             }
             
-            .projects-grid, .certs-container {
+            .projects-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .profile-container {
+                width: 170px;
+                height: 170px;
             }
         }
     </style>
@@ -412,23 +494,39 @@
 <body>
     <header>
         <div class="header-content">
-            <div class="profile-img"></div>
+            <div class="profile-container">
+                <div class="profile-img" id="profile-pic"></div>
+                <div class="edit-overlay">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <input type="file" id="profile-upload" accept="image/*">
+            </div>
             <h1>Arman Bishnoi</h1>
             <div class="tagline">Computer Science Engineer | AI & Machine Learning Specialist</div>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>arman.bishnoi@example.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Patiala, Punjab</span>
+                    <span>armanbishnoi.official@gmail.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+91 98765 43210</span>
+                    <span>+91 7357416347</span>
                 </div>
             </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/arman-bishnoi/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/creater29" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+            <a href="#" class="download-btn">
+                <i class="fas fa-download"></i>
+                Download Resume
+            </a>
         </div>
     </header>
 
@@ -441,7 +539,6 @@
                 <div class="degree">Bachelor of Engineering in Computer Science (AI)</div>
                 <div class="date-location">
                     <div><i class="far fa-calendar"></i> September 2021 - June 2025</div>
-                    <div><i class="fas fa-map-marker-alt"></i> Patiala, Punjab</div>
                 </div>
             </div>
         </section>
@@ -516,6 +613,21 @@
         <!-- Experience Section -->
         <section class="experience">
             <h2 class="section-title">Experience</h2>
+            
+            <!-- Amazon Experience -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Amazon</div>
+                </div>
+                <div class="position">Software Development Engineer Intern</div>
+                <ul class="job-details">
+                    <li>Developed a widget "Your Diamonds" in Amazon Mobile App for IOS/Android customers. This widget is visible at 'You' tab in Amazon mobile App.</li>
+                    <li>Developed a WhatsApp Notification system for Diamonds Program, i.e., For every credit of Diamonds, customer will receive a WhatsApp notification.</li>
+                    <li>Developed an internal tool (web app based on react-native) for the team which will be used to create promotions (offers on Amazon products).</li>
+                </ul>
+            </div>
+            
+            <!-- ThapaSat Experience -->
             <div class="job">
                 <div class="job-header">
                     <div class="company">ThapaSat (ELC)</div>
@@ -541,6 +653,7 @@
                         <span class="skill-item">SQL</span>
                         <span class="skill-item">HTML</span>
                         <span class="skill-item">CSS</span>
+                        <span class="skill-item">JavaScript</span>
                     </div>
                 </div>
 
@@ -554,6 +667,7 @@
                         <span class="skill-item">Power BI</span>
                         <span class="skill-item">AWS (S3, EC2)</span>
                         <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">React Native</span>
                     </div>
                 </div>
 
@@ -566,6 +680,7 @@
                         <span class="skill-item">Data Analysis</span>
                         <span class="skill-item">ETL Pipelines</span>
                         <span class="skill-item">Cloud Deployment</span>
+                        <span class="skill-item">Mobile App Development</span>
                     </div>
                 </div>
 
@@ -580,59 +695,61 @@
                 </div>
             </div>
         </section>
-
-        <!-- Certifications Section -->
-        <section>
-            <h2 class="section-title">Certifications</h2>
-            <div class="certs-container">
-                <!-- Cert 1 -->
-                <div class="cert-card">
-                    <h3 class="cert-title">AWS Academy Cloud Foundations</h3>
-                    <div class="cert-issuer">AWS Academy Graduate</div>
-                    <div class="cert-date">
-                        <i class="far fa-calendar"></i>
-                        June 2024
-                    </div>
-                    <a href="#" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i>
-                        View Certificate
-                    </a>
-                </div>
-
-                <!-- Cert 2 -->
-                <div class="cert-card">
-                    <h3 class="cert-title">Create ML Models with BigQuery ML</h3>
-                    <div class="cert-issuer">Google Cloud Skill Badge</div>
-                    <div class="cert-date">
-                        <i class="far fa-calendar"></i>
-                        2024
-                    </div>
-                    <a href="#" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i>
-                        View Certificate
-                    </a>
-                </div>
-
-                <!-- Cert 3 -->
-                <div class="cert-card">
-                    <h3 class="cert-title">Prompt Design in Vertex AI</h3>
-                    <div class="cert-issuer">Google Cloud Skill Badge</div>
-                    <div class="cert-date">
-                        <i class="far fa-calendar"></i>
-                        2024
-                    </div>
-                    <a href="#" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i>
-                        View Certificate
-                    </a>
-                </div>
-            </div>
-        </section>
     </div>
 
     <footer>
+        <div class="footer-socials">
+            <a href="mailto:armanbishnoi.official@gmail.com" class="footer-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+917357416347" class="footer-link">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/arman-bishnoi/" class="footer-link" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/creater29" class="footer-link" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        
         <p>&copy; 2025 Arman Bishnoi | Resume Portfolio</p>
         <p>Designed with ❤️ using HTML & CSS</p>
     </footer>
+    
+    <script>
+        // Profile picture upload functionality
+        document.querySelector('.profile-container').addEventListener('click', function() {
+            document.getElementById('profile-upload').click();
+        });
+
+        document.getElementById('profile-upload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    document.getElementById('profile-pic').style.backgroundImage = `url(${event.target.result})`;
+                }
+                
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // Resume download functionality
+        document.querySelector('.download-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a temporary link to simulate download
+            const link = document.createElement('a');
+            link.href = '#';
+            link.download = 'ArmanBishnoi_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show a message
+            alert('Your resume download will start shortly. In a real implementation, this would download the PDF file.');
+        });
+    </script>
 </body>
 </html>
