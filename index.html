@@ -63,42 +63,14 @@
             height: 100%;
             border-radius: 50%;
             border: 5px solid rgba(14, 165, 233, 0.3);
-            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80') center/cover;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            object-fit: cover;
         }
 
         .profile-container:hover .profile-img {
             transform: scale(1.05);
             border-color: rgba(14, 165, 233, 0.6);
-        }
-
-        .edit-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .profile-container:hover .edit-overlay {
-            opacity: 1;
-        }
-
-        .edit-overlay i {
-            font-size: 2rem;
-            color: white;
-        }
-
-        #profile-upload {
-            display: none;
         }
 
         h1 {
@@ -489,17 +461,63 @@
                 height: 170px;
             }
         }
+        
+        /* Decorative elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.1);
+            z-index: 0;
+        }
+        
+        .floating-1 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 5%;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        .floating-2 {
+            width: 80px;
+            height: 80px;
+            bottom: 15%;
+            right: 8%;
+            animation: float 10s infinite ease-in-out;
+        }
+        
+        .floating-3 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            right: 15%;
+            animation: float 12s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Floating decorative elements -->
+    <div class="floating-element floating-1"></div>
+    <div class="floating-element floating-2"></div>
+    <div class="floating-element floating-3"></div>
+    
     <header>
         <div class="header-content">
             <div class="profile-container">
-                <div class="profile-img" id="profile-pic"></div>
-                <div class="edit-overlay">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <input type="file" id="profile-upload" accept="image/*">
+                <!-- GitHub profile picture will be inserted here by JavaScript -->
+                <img id="github-profile-pic" class="profile-img" alt="Arman Bishnoi">
             </div>
             <h1>Arman Bishnoi</h1>
             <div class="tagline">Computer Science Engineer | AI & Machine Learning Specialist</div>
@@ -718,22 +736,36 @@
     </footer>
     
     <script>
-        // Profile picture upload functionality
-        document.querySelector('.profile-container').addEventListener('click', function() {
-            document.getElementById('profile-upload').click();
-        });
+        // Function to fetch GitHub profile picture
+        function fetchGitHubProfilePicture() {
+            const githubUsername = 'creater29';
+            const profilePicElement = document.getElementById('github-profile-pic');
+            
+            // GitHub API endpoint for user data
+            fetch(`https://api.github.com/users/${githubUsername}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('GitHub user not found');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Set the profile picture source to the avatar URL from GitHub
+                    profilePicElement.src = data.avatar_url;
+                    
+                    // Add alt text for accessibility
+                    profilePicElement.alt = `${data.name || githubUsername}'s GitHub profile picture`;
+                })
+                .catch(error => {
+                    console.error('Error fetching GitHub profile:', error);
+                    // Fallback to a default image if GitHub API fails
+                    profilePicElement.src = 'https://via.placeholder.com/200';
+                    profilePicElement.alt = 'Default profile picture';
+                });
+        }
 
-        document.getElementById('profile-upload').addEventListener('change', function(e) {
-            if (e.target.files && e.target.files[0]) {
-                const reader = new FileReader();
-                
-                reader.onload = function(event) {
-                    document.getElementById('profile-pic').style.backgroundImage = `url(${event.target.result})`;
-                }
-                
-                reader.readAsDataURL(e.target.files[0]);
-            }
-        });
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', fetchGitHubProfilePicture);
 
         // Resume download functionality
         document.querySelector('.download-btn').addEventListener('click', function(e) {
