@@ -1558,3 +1558,92 @@ textarea.form-control {
 [data-aos="fade-up"].aos-animate {
   transform: translateY(0);
 }
+
+/* Add to the end of existing CSS */
+
+/* Education Section */
+.education.section {
+  background: linear-gradient(135deg, rgba(135, 206, 235, 0.05) 0%, rgba(74, 144, 226, 0.05) 100%);
+}
+
+.education__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background: var(--gradient-card);
+  padding: var(--space-32);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--sao-interface);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+}
+
+.education-card__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-8);
+  color: var(--slime-accent);
+}
+
+.education-card__institute {
+  font-weight: var(--font-weight-medium);
+  color: var(--sao-interface);
+  margin-bottom: var(--space-8);
+}
+
+.education-card__details {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-16);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Experience card list styles */
+.experience-card__description {
+  padding-left: 20px;
+}
+
+.experience-card__description li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Skills section adjustments */
+.skills__categories {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-24);
+}
+
+.skill-category {
+  background: var(--gradient-card);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--sao-interface);
+  backdrop-filter: blur(5px);
+}
+
+/* Project card adjustments */
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card__description {
+  flex-grow: 1;
+}
+
+/* Contact info adjustments */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
