@@ -3,89 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arman Bishnoi - AI and Cloud Engineer</title>
+    <title>Arman Bishnoi - Computer Science Student & AI Specialist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">A</span>
-                <span class="logo-subtitle">AI & Cloud Engineer</span>
+    <nav class="nav" id="navbar">
+        <div class="nav__container">
+            <div class="nav__logo">
+                <span class="nav__logo-text">AB</span>
+                <div class="magic-circle magic-circle--small"></div>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#hero" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#education" class="nav__link">Education</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#experience" class="nav__link">Experience</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#skills" class="nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projects" class="nav__link">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav__toggle" id="nav-toggle">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with background image -->
-    <section class="hero" id="hero">
-        <div class="hero-background"></div>
-        <div class="particles" id="particles"></div>
-        <div class="lightning-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="typing-text" id="typingText"></span>
-                    <span class="cursor">|</span>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero__background">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__title-line">Arman Bishnoi</span>
+                    <span class="hero__title-line hero__title-line--accent">Computer Science Student (AI)</span>
                 </h1>
-                <p class="hero-subtitle">AI and Cloud Engineer</p>
-                <p class="hero-description">Computer Science (AI) Student</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn--primary hero-btn">View Projects</a>
-                    <a href="#contact" class="btn btn--outline hero-btn">Get In Touch</a>
+                <p class="hero__subtitle">Full-Stack Developer & Cloud Engineer</p>
+                <p class="hero__description">
+                    Ready to embark on epic coding adventures, just like Luffy's journey to become the Pirate King!
+                </p>
+                <div class="hero__actions">
+                    <button class="btn btn--primary btn--glow" onclick="scrollToSection('projects')">
+                        View My Projects
+                    </button>
+                    <button class="btn btn--outline btn--glow" onclick="scrollToSection('contact')">
+                        Contact Me
+                    </button>
                 </div>
             </div>
-            <div class="hero-character">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjgwMCIgdmlld0JveD0iMCAwIDYwMCA4MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IiMzMzMiLz4KICA8dGV4dCB4PSIzMDAiIHk9IjQwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5LaXJpdG8gSW1hZ2U8L3RleHQ+Cjwvc3ZnPg==" alt="Kirito" class="character-img kirito-img">
+            <div class="hero__visual">
+                <div class="magic-circle magic-circle--large"></div>
+                <div class="magic-circle magic-circle--medium"></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Zoro green color scheme -->
-    <section class="about" id="about">
+    <!-- About Section -->
+    <section id="about" class="about section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <div class="magic-circle"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMyMjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjMwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ab3JvIEltYWdlPC90ZXh0Pgo8L3N2Zz4=" alt="Zoro" class="zoro-img">
-                </div>
-                <div class="about-text">
-                    <p class="about-description">A results-driven Computer Science student with a specialisation in Artificial Intelligence and hands-on experience in full-stack development, cloud automation, and machine learning. Proven ability to deliver impactful solutions, such as developing a customer-facing feature for the Amazon mobile app and engineering a serverless AWS inventory system that reduced manual audit time by 80%. Eager to apply expertise in Python, AWS, and AI to challenging software development roles.</p>
-                    <div class="stats-grid">
+            <h2 class="section__title">About Me</h2>
+            <div class="about__content">
+                <div class="about__text">
+                    <p class="about__description">
+                        A results-driven Computer Science student with a specialisation in Artificial Intelligence and hands-on experience in full-stack development, cloud automation, and machine learning. Proven ability to deliver impactful solutions, such as developing a customer-facing feature for the Amazon mobile app and engineering a serverless AWS inventory system that reduced manual audit time by 80%.
+                    </p>
+                    <p class="about__description">
+                        Eager to apply expertise in Python, AWS, and AI to challenging software development roles. Just as Asta never gives up in Black Clover, I approach every coding challenge with unwavering determination and the belief that there's always a solution waiting to be discovered.
+                    </p>
+                    <div class="about__stats">
                         <div class="stat-card">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Projects</div>
+                            <div class="stat-card__number">3</div>
+                            <div class="stat-card__label">Internships</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Internships</div>
+                            <div class="stat-card__number">5+</div>
+                            <div class="stat-card__label">Projects</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">80%</div>
-                            <div class="stat-label">Time Saved</div>
+                            <div class="stat-card__number">3</div>
+                            <div class="stat-card__label">Languages</div>
                         </div>
                     </div>
-                    <div class="education-info">
-                        <h3>Education</h3>
-                        <p><strong>Bachelor of Engineering in Computer Science (AI)</strong></p>
-                        <p>Thapar Institute of Engineering and Technology</p>
-                        <p>Sep 2021 - Jun 2025 (Expected)</p>
+                </div>
+                <div class="about__visual">
+                    <div class="character-frame">
+                        <div class="character-frame__border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section">
+        <div class="container">
+            <h2 class="section__title">Education</h2>
+            <div class="education__content">
+                <div class="education-card">
+                    <h3 class="education-card__title">Bachelor of Engineering in Computer Science (AI)</h3>
+                    <div class="education-card__institute">Thapar Institute of Engineering and Technology</div>
+                    <div class="education-card__details">
+                        <span class="education-card__duration">Sep 2021 - Jun 2025 (Expected)</span>
+                        <span class="education-card__location">Patiala, Punjab, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section__title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline__item" data-aos="fade-up">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <div class="experience-card">
+                            <h3 class="experience-card__title">SDE Intern | Amazon (Diamonds Program)</h3>
+                            <div class="experience-card__company">Bangalore, India</div>
+                            <div class="experience-card__duration">Jan 2025 - Jun 2025</div>
+                            <ul class="experience-card__description">
+                                <li>Developed the "Your Diamonds" widget within the Amazon Mobile App (iOS/Android), enhancing user engagement under the 'You' tab</li>
+                                <li>Built a scalable WhatsApp notification system for the Diamonds Program to inform users of credit events</li>
+                                <li>Created an internal React-Native web application that enabled the team to streamline the creation and management of product promotions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline__item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <div class="experience-card">
+                            <h3 class="experience-card__title">Cloud AI DevOps Intern | Deloitte</h3>
+                            <div class="experience-card__company">Bangalore, India</div>
+                            <div class="experience-card__duration">Jun 2024 - Aug 2024</div>
+                            <ul class="experience-card__description">
+                                <li><strong>Led cloud automation platform development</strong> - Directed a 3-person team to build an enterprise cloud onboarding automation product, achieving 60% reduction in client infrastructure onboarding time and driving standardization across multiple projects</li>
+                                <li><strong>Architected comprehensive backend infrastructure</strong> - Designed and developed the system using AWS Lambda (Python), Amazon RDS (PostgreSQL), and Amazon Cognito for authentication/RBAC, enabling project and environment creation with Dev/Pre-Prod/Prod layers and component-level configuration</li>
+                                <li><strong>Automated infrastructure provisioning workflows</strong> - Implemented IP requirement calculation, CIDR allocation logic, automated subnet division and routing design for well-architected landing zones, plus automated Terraform code generation from S3-stored templates deployed via Jenkins CI/CD pipeline</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline__item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <div class="experience-card">
+                            <h3 class="experience-card__title">Summer Intern | ThapaSat (ELC)</h3>
+                            <div class="experience-card__company">Patiala, Punjab</div>
+                            <div class="experience-card__duration">Jun 2023 - Jul 2023</div>
+                            <ul class="experience-card__description">
+                                <li>Engineered a signal processing algorithm converting over 1000 audio files into images, achieving a 95% success rate for producing clear weather maps</li>
+                                <li>Created backend Python code to detect cyclones from satellite imagery, processing 60 images per minute with 90% accuracy in predicting storm paths up to 36 hours in advance</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,69 +188,181 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills" id="skills">
+    <section id="skills" class="skills section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Abilities</h2>
-                <div class="magic-circle"></div>
-            </div>
-            <div class="skills-grid">
-                <!-- ... (same as before) ... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience</h2>
-                <div class="magic-circle"></div>
-            </div>
-            <div class="timeline">
-                <!-- ... (same as before) ... -->
+            <h2 class="section__title">Skills</h2>
+            <div class="skills__categories">
+                <div class="skill-category" data-aos="fade-up">
+                    <h3 class="skill-category__title">Programming Languages</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag skill-tag--master">Python</div>
+                        <div class="skill-tag skill-tag--master">C++</div>
+                        <div class="skill-tag skill-tag--master">SQL</div>
+                        <div class="skill-tag skill-tag--advanced">HTML/CSS</div>
+                        <div class="skill-tag skill-tag--advanced">Bash</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="skill-category__title">Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag skill-tag--master">Scikit-learn</div>
+                        <div class="skill-tag skill-tag--master">Pandas</div>
+                        <div class="skill-tag skill-tag--master">NumPy</div>
+                        <div class="skill-tag skill-tag--advanced">PyTorch</div>
+                        <div class="skill-tag skill-tag--advanced">FastAPI</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skill-category__title">Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag skill-tag--master">AWS (Lambda, S3, EC2)</div>
+                        <div class="skill-tag skill-tag--master">DynamoDB</div>
+                        <div class="skill-tag skill-tag--master">Serverless</div>
+                        <div class="skill-tag skill-tag--advanced">Cloud Automation</div>
+                        <div class="skill-tag skill-tag--advanced">Terraform</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="skill-category__title">Core Concepts</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag skill-tag--master">Machine Learning</div>
+                        <div class="skill-tag skill-tag--master">Computer Vision</div>
+                        <div class="skill-tag skill-tag--master">Data Analysis</div>
+                        <div class="skill-tag skill-tag--advanced">ETL Pipelines</div>
+                        <div class="skill-tag skill-tag--advanced">Algorithm Design</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section id="projects" class="projects section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <div class="magic-circle"></div>
+            <h2 class="section__title">Projects</h2>
+            <div class="projects__grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-card__header">
+                        <h3 class="project-card__title">AWS Inventory System</h3>
+                        <div class="project-card__tech">
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">EventBridge</span>
+                        </div>
+                    </div>
+                    <p class="project-card__description">
+                        Developed a serverless solution using AWS Lambda to automate data retrieval from 20 AWS services, processing over 1500 records daily and reducing manual audit time by 80%. Utilised DynamoDB for service-specific data storage, achieving an average read/write latency of 5ms.
+                    </p>
+                    <div class="project-card__actions">
+                        <button class="btn btn--sm btn--primary">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card__header">
+                        <h3 class="project-card__title">DialogFlow Chatbot</h3>
+                        <div class="project-card__tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                    <p class="project-card__description">
+                        Engineered a conversational food ordering chatbot, developing the backend API with Python and FastAPI to manage the complete order lifecycle from placement to tracking.
+                    </p>
+                    <div class="project-card__actions">
+                        <button class="btn btn--sm btn--primary">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card__header">
+                        <h3 class="project-card__title">Placed - Job Aggregation Platform</h3>
+                        <div class="project-card__tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <p class="project-card__description">
+                        Built a job aggregation platform with an ML pipeline (Random Forest) to classify job experience levels and extract technical skills from descriptions.
+                    </p>
+                    <div class="project-card__actions">
+                        <button class="btn btn--sm btn--primary">View Details</button>
+                    </div>
+                </div>
             </div>
-            <!-- ... (same as before) ... -->
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="magic-circle"></div>
+            <h2 class="section__title">Contact Me</h2>
+            <div class="contact__content">
+                <div class="contact__text">
+                    <p class="contact__description">
+                        Ready to collaborate on innovative projects? Feel free to reach out for opportunities in software engineering, AI, or cloud development.
+                    </p>
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <span class="contact__label">Email:</span>
+                            <a href="mailto:armanbishnoi.official@gmail.com" class="contact__link">armanbishnoi.official@gmail.com</a>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__label">Phone:</span>
+                            <a href="tel:+917357416347" class="contact__link">+91 7357416347</a>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__label">LinkedIn:</span>
+                            <a href="https://linkedin.com/in/arman-bishnoi" target="_blank" class="contact__link">linkedin.com/in/arman-bishnoi</a>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__label">GitHub:</span>
+                            <a href="https://creater29.github.io/" target="_blank" class="contact__link">creater29.github.io</a>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__label">Location:</span>
+                            <span class="contact__link">Patiala, Punjab, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact__form">
+                    <form class="form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width btn--glow">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
-            <!-- ... (same as before) ... -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Arman Bishnoi</h3>
-                    <p>AI and Cloud Engineer</p>
+            <div class="footer__content">
+                <p>&copy; 2025 Arman Bishnoi. Made with ❤️ and anime inspiration.</p>
+                <div class="footer__social">
+                    <a href="https://github.com/creater29" class="footer__social-link" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/arman-bishnoi" class="footer__social-link" target="_blank">LinkedIn</a>
+                    <a href="https://creater29.github.io/" class="footer__social-link" target="_blank">Portfolio</a>
                 </div>
-                <div class="footer-links">
-                    <a href="https://linkedin.com/in/arman-bishnoi" target="_blank" class="footer-link">LinkedIn</a>
-                    <a href="https://github.com/creater29" target="_blank" class="footer-link">GitHub</a>
-                    <a href="https://creater29.github.io" target="_blank" class="footer-link">Portfolio</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arman Bishnoi. All rights reserved.</p>
             </div>
         </div>
     </footer>
